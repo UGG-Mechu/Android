@@ -31,20 +31,37 @@ class MainActivity : AppCompatActivity() {
 
         binding.mainBottomNav.setOnItemSelectedListener { item ->
             when (item.itemId) {
-                R.id.nav_home -> {
+                R.id.nav_enter -> {
                     supportFragmentManager.beginTransaction()
-                        .replace(R.id.main_frm, HomeFragment())
+                        .replace(R.id.main_frm, EnterFragment())
+                        .addToBackStack(null)
                         .commitAllowingStateLoss()
                     return@setOnItemSelectedListener true
                 }
-                R.id.nav_rating -> {
+                R.id.nav_show -> {
                     supportFragmentManager.beginTransaction()
-                        .replace(R.id.main_frm, RatingFragment())
+                        .replace(R.id.main_frm, ShowFragment())
+                        .addToBackStack(null)
                         .commitAllowingStateLoss()
                     return@setOnItemSelectedListener true
                 }
                 else -> false
             }
+        }
+    }
+
+    override fun onBackPressed() {
+        // 현재 표시된 프래그먼트가 HomeFragment가 아닌 경우에만 백스택을 비웁니다.
+        val fragment = supportFragmentManager.findFragmentById(R.id.main_frm)
+        if (fragment !is HomeFragment) {
+            // 백스택을 모두 비우고 HomeFragment로 돌아갑니다.
+            supportFragmentManager.popBackStack(null, androidx.fragment.app.FragmentManager.POP_BACK_STACK_INCLUSIVE)
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.main_frm, HomeFragment())
+                .commitAllowingStateLoss()
+        } else {
+            // HomeFragment가 표시된 경우 기본 동작 (앱 종료)을 수행합니다.
+            super.onBackPressed()
         }
     }
 }
