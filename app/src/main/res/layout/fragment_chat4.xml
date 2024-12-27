@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/light_blue">
+
+    <ImageView
+        android:id="@+id/chat4_emotion_iv"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:src="@drawable/res_angry"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="50dp"/>
+    
+    <TextView
+        android:id="@+id/chat4_result_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="진심이신가요?"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/chat4_emotion_iv"
+        android:layout_marginTop="10dp"
+        android:textSize="30sp"
+        android:textStyle="bold"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/chat4_eval_cl"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/chat4_result_tv"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:background="@drawable/round_box"
+        android:layout_marginTop="30dp">
+
+        <TextView
+            android:id="@+id/chat4_eval_product_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="노란 가디건"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/chat4_pb"
+            android:layout_marginStart="20dp"/>
+        <TextView
+            android:id="@+id/chat4_eval_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="소비 적정도"
+            android:textSize="13sp"
+            app:layout_constraintStart_toEndOf="@id/chat4_eval_product_tv"
+            app:layout_constraintBottom_toBottomOf="@id/chat4_eval_product_tv"
+            android:layout_marginStart="5dp"/>
+        <TextView
+            android:id="@+id/chat4_eval_percent_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="48%"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="@id/chat4_eval_product_tv"
+            android:layout_marginEnd="20dp"/>
+        <ProgressBar
+            android:id="@+id/chat4_pb"
+            android:layout_width="0dp"
+            android:layout_height="20dp"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            app:layout_constraintStart_toStartOf="@id/chat4_eval_product_tv"
+            app:layout_constraintEnd_toEndOf="@id/chat4_eval_percent_tv"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/chat4_eval_product_tv"
+            android:progressDrawable="@drawable/progress_bar"
+            android:progress="48"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/chat4_next_btn"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:background="@drawable/round_box"
+        android:backgroundTint="@color/miniin_blue"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="50dp"
+        android:text="확인"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:gravity="center"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
