@@ -95,11 +95,13 @@
                     android:layout_height="wrap_content"
                     android:gravity="center">
                     <Button
+                        android:id="@+id/todaySpend"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="오늘의 소비 입력하기 >"
                         android:textColor="@color/black"
-                        android:textSize="15sp" />
+                        android:textSize="15sp"
+                        android:backgroundTint="@color/transparent"/>
                 </LinearLayout>
 
             </LinearLayout>
