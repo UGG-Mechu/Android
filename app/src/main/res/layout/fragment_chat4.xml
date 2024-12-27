@@ -43,7 +43,7 @@
             android:id="@+id/chat4_eval_product_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="노란 가디건"
+            android:text="패딩 부츠"
             android:textSize="15sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
