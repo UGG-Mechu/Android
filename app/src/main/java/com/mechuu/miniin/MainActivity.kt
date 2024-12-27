@@ -28,6 +28,7 @@ class MainActivity : AppCompatActivity() {
         supportFragmentManager.beginTransaction()
             .replace(R.id.main_frm, HomeFragment())
             .commitAllowingStateLoss()
+        binding.mainBottomNav.selectedItemId = R.id.temp
 
         binding.mainBottomNav.setOnItemSelectedListener { item ->
             when (item.itemId) {
@@ -59,6 +60,7 @@ class MainActivity : AppCompatActivity() {
             supportFragmentManager.beginTransaction()
                 .replace(R.id.main_frm, HomeFragment())
                 .commitAllowingStateLoss()
+            binding.mainBottomNav.selectedItemId = R.id.temp
         } else {
             // HomeFragment가 표시된 경우 기본 동작 (앱 종료)을 수행합니다.
             super.onBackPressed()

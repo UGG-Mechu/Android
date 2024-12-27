@@ -36,7 +36,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:menu="@menu/bottom_nav_menu"
         android:background="@color/white"
-        app:itemIconTint="@color/dark_grey"/>
+        app:itemTextColor="@drawable/bottom_nav_selector"
+        app:itemIconTint="@drawable/bottom_nav_selector"/>
 
     <FrameLayout
         android:id="@+id/main_frm"
