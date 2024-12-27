@@ -17,6 +17,10 @@ class ChatActivity : AppCompatActivity() {
             onBackPressedDispatcher.onBackPressed()
         }
 
+        binding.chatCloseIv.setOnClickListener {
+            finish()
+        }
+
         supportFragmentManager.beginTransaction()
             .replace(R.id.chat_frm, ChatFragment1())
             .commitAllowingStateLoss()
