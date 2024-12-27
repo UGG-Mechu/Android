@@ -4,4 +4,7 @@
     <color name="white">#FFFFFFFF</color>
 
     <color name="transparent">#00ff0000</color>
+
+    <color name="purple">#5658E7</color>
+    <color name="lightgrey">#6A6969</color>
 </resources>
