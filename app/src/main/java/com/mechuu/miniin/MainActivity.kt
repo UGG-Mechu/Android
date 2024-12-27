@@ -1,7 +1,10 @@
 package com.mechuu.miniin
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.ViewCompat
+import androidx.core.view.WindowInsetsCompat
 import com.mechuu.miniin.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -14,6 +17,11 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         initBottomNavigation()
+        
+        binding.moveToChat.setOnClickListener {
+            val intent= Intent(this,ChatActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     private fun initBottomNavigation() {
