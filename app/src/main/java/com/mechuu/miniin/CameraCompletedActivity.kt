@@ -15,8 +15,11 @@ class CameraCompletedActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.checkSpend.setOnClickListener {
-            val intent = Intent(this, ResultActivity::class.java)
+            // MainActivity로 돌아가면서 EnterFragment 실행
+            val intent = Intent(this@CameraCompletedActivity, MainActivity::class.java)
+            intent.putExtra("fragment_to_load", "enter")  // Intent로 fragment 정보를 전달
             startActivity(intent)
+            finish()  // CameraCompletedActivity 종료
         }
 
     }

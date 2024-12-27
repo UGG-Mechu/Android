@@ -16,7 +16,13 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        initBottomNavigation()
+        // Intent에서 fragment_to_load 값을 확인하여 해당 Fragment를 로드
+        val fragmentToLoad = intent.getStringExtra("fragment_to_load")
+        if (fragmentToLoad == "enter") {
+            loadEnterFragment()
+        } else {
+            initBottomNavigation()
+        }
         
         binding.moveToChat.setOnClickListener {
             val intent= Intent(this,ChatActivity::class.java)
@@ -31,6 +37,12 @@ class MainActivity : AppCompatActivity() {
         binding.mainBottomNav.selectedItemId = R.id.temp
 
         super.onRestart()
+    }
+
+    private fun loadEnterFragment() {
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.main_frm, EnterFragment())
+            .commitAllowingStateLoss()
     }
 
     private fun initBottomNavigation() {
