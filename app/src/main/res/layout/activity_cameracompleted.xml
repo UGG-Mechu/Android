@@ -48,7 +48,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="영수증 사진으로 오늘의 소비를\n한번에 입력해보세요"
+            android:text="오늘의 소비가 기록되었어요!"
             android:layout_marginTop="20dp"
             android:layout_marginStart="30dp"
             android:textSize="20sp"
@@ -58,9 +58,9 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="어쩌구저쩌구 글이 잘 보일 수 있도록\n찍으면 정확도가 올라가요"
+            android:text="소비점수는 일주일에 한번씩 측정됩니다"
             android:layout_marginStart="30dp"
-            android:layout_marginTop="85dp"
+            android:layout_marginTop="60dp"
             android:textSize="15sp"
             android:textColor="@color/dark_grey"
             />
@@ -68,35 +68,20 @@
         <ImageView
             android:layout_width="300dp"
             android:layout_height="300dp"
-            android:src="@drawable/phonepic"
+            android:src="@drawable/camera_completed"
             android:layout_marginTop="150dp"
             android:layout_gravity="center_horizontal"/>
 
         <Button
-            android:id="@+id/cameraOn"
+            android:id="@+id/checkSpend"
             android:layout_gravity="center_horizontal"
             android:layout_width="350dp"
             android:layout_height="60dp"
-            android:layout_marginTop="470dp"
-            android:text="카메라 인증 시작하기"
+            android:layout_marginTop="500dp"
+            android:text="소비내역 확인하기"
             android:textStyle="bold"
             android:textSize="20sp"
             android:backgroundTint="@color/miniin_blue"/>
-
-        <Button
-            android:layout_gravity="center_horizontal"
-            android:layout_width="350dp"
-            android:layout_height="60dp"
-            android:layout_marginTop="530dp"
-            android:text="직접 입력하기"
-            android:textStyle="bold"
-            android:textColor="@color/dark_grey"
-            android:textSize="20sp"
-            android:backgroundTint="@color/white"
-            />
-
-
-
 
 
     </FrameLayout>

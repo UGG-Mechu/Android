@@ -38,12 +38,18 @@ class BillActivity : AppCompatActivity() {
         }
     }
 
+    private val cameraActivityResultLauncher =
+        registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+            if (result.resultCode == RESULT_OK) {
+                val intent = Intent(this, CameraCompletedActivity::class.java)
+                startActivity(intent)
+            } else {
+                Toast.makeText(this, "카메라 촬영이 취소되었습니다.", Toast.LENGTH_SHORT).show()
+            }
+        }
+
     private fun openCamera() {
         val intent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
-        startActivityForResult(intent, REQUEST_CAMERA)
-    }
-
-    companion object {
-        const val REQUEST_CAMERA = 1
+        cameraActivityResultLauncher.launch(intent)
     }
 }
