@@ -18,6 +18,7 @@ class ChatFragment2 : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentChat2Binding.inflate(inflater, container, false)
+        updateStatus(0)
 
         binding.chat2Answer1Tv.setOnClickListener {
             updateStatus(1)
@@ -37,10 +38,16 @@ class ChatFragment2 : Fragment() {
 
         binding.chat2NextBtn.setOnClickListener {
             if(isSelected != 0) {
-                requireActivity().supportFragmentManager.beginTransaction()
-                    .replace(R.id.chat_frm, ChatFragment3())
-                    .addToBackStack(null)
-                    .commitAllowingStateLoss()
+                if(AppData.questionCount == 4) {
+                    requireActivity().supportFragmentManager.beginTransaction()
+                        .replace(R.id.chat_frm, ChatFragment3())
+                        .addToBackStack(null)
+                        .commitAllowingStateLoss()
+                }
+                else {
+                    AppData.questionCount++
+                    updateStatus(0)
+                }
             }
         }
 
@@ -48,7 +55,14 @@ class ChatFragment2 : Fragment() {
     }
 
     private fun updateStatus(selectedNum : Int) {
-        binding.chat2NextBtn.backgroundTintList = ContextCompat.getColorStateList(requireContext(), R.color.miniin_blue)
+        if(selectedNum == 0) {
+            binding.chat2NextBtn.backgroundTintList = ContextCompat.getColorStateList(requireContext(), R.color.dark_grey)
+
+            binding.chat2Pb.progress = (AppData.questionCount + 1) * 20
+        }
+        else {
+            binding.chat2NextBtn.backgroundTintList = ContextCompat.getColorStateList(requireContext(), R.color.miniin_blue)
+        }
 
         if(isSelected == 1) {
             binding.chat2Check1Iv.visibility = View.GONE

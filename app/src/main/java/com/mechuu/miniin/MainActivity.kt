@@ -24,6 +24,15 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    override fun onRestart() {
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.main_frm, HomeFragment())
+            .commitAllowingStateLoss()
+        binding.mainBottomNav.selectedItemId = R.id.temp
+
+        super.onRestart()
+    }
+
     private fun initBottomNavigation() {
         supportFragmentManager.beginTransaction()
             .replace(R.id.main_frm, HomeFragment())
