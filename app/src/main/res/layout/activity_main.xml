@@ -29,8 +29,10 @@
         app:menu="@menu/bottom_nav_menu"
         app:labelVisibilityMode="unlabeled"
         app:itemIconSize="40dp"
+        app:itemRippleColor="@color/transparent"
+        app:itemActiveIndicatorStyle="@color/transparent"
         android:paddingStart="30dp"
-        android:paddingEnd="30dp"/>
+        android:paddingEnd="30dp" />
 
     <FrameLayout
         android:id="@+id/main_frm"
